@@ -1,0 +1,547 @@
+* {
+    font-family: 'Playfair Display SC', serif;
+    color: #a7d8d5;
+}
+
+::placeholder {
+    color: #A7D8D5;
+    opacity: 1;
+}
+
+
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 90%;
+    border-radius: 10px;
+}
+
+body {
+    margin: 0;
+    /* background-color: #F0F0F0; */
+    background: radial-gradient(ellipse at center, #192d38 0, #211f2f 100%);
+}
+
+.dropbtn {
+    float: left;
+    display: block;
+    color: #A7D8D5;
+    background: #417E77;
+    text-align: center;
+    padding: 5px 7px;
+    width: 140px;
+    border: none;
+    margin: 11px 3px;
+    text-decoration: none;
+    font-size: 14px;
+    border-radius: 5px;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: #f1f1f1
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+    margin: 42px 3px;
+}
+
+.dropdown:hover .dropbtn {
+    background: #58a199;
+    color: #6ccecb;
+}
+
+.logo {
+    overflow: hidden;
+    background-color: #004A4D;
+    display: flex;
+    justify-content: center;
+}
+
+.logo a[id=botton] {
+    float: left;
+    display: block;
+    color: #A7D8D5;
+    background: #417E77;
+    text-align: center;
+    padding: 5px 7px;
+    margin: 11px 3px;
+    text-decoration: none;
+    font-size: 14px;
+    border-radius: 5px;
+}
+
+.logo a:hover {
+    background: #58a199;
+    color: #6ccecb;
+}
+
+
+
+.navbar {
+    overflow: hidden;
+    background-color: #005659;
+    display: flex;
+    justify-content: center;
+    /* position: fixed; */
+    top: 0;
+    width: 100%;
+}
+
+.navbar a {
+    float: left;
+    display: block;
+    color: #A7D8D5;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 3vmin;
+}
+
+.navbar a:hover {
+    background: #ddd;
+    color: black;
+}
+
+.navbar a.active {
+    background-color: #00686C;
+    ;
+    color: #A7D8D5;
+}
+
+form.search input[type=text] {
+    padding: 5px;
+    font-size: 14px;
+    border: 1px solid #417E77;
+    border-right: none;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    float: left;
+    width: 80%;
+    background: #417E77;
+}
+
+form.search button {
+    float: left;
+    width: 15%;
+    padding: 7px;
+    background: #417E77;
+    color: #A7D8D5;
+    font-size: 14px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border: 1px solid #417E77;
+    border-left: none;
+    cursor: pointer;
+}
+
+form.search button:hover {
+    background: #539e95;
+}
+
+form.search::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+.container {
+    display: block;
+    box-sizing: border-box;
+    margin-left: 3%;
+    margin-right: 3%;
+    border-radius: 10px;
+}
+
+.row {
+    display: -ms-flexbox;
+    /* IE10 */
+    display: flex;
+    -ms-flex-wrap: wrap;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    padding: 0 4px;
+}
+
+.column {
+    -ms-flex: 20%;
+    /* IE10 */
+    flex: 20%;
+    max-width: 15%;
+    /* padding: 0 10px; */
+    margin: 10px;
+    background-color: rgb(232 246 246);
+    border-radius: 10px;
+}
+
+
+.column img {
+    border-radius: 10px;
+    box-shadow: 2px -7px 31px -14px rgb(255 255 255);
+    vertical-align: middle;
+    width: 100%;
+}
+
+
+.button {
+    display: inline-block;
+    border-radius: 4px;
+    background-color: #f4511e;
+    border: none;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 1vw;
+    padding-right: 10px;
+    padding-left: 10px;
+    padding-bottom: 5px;
+    padding-top: 5px;
+    width: 20%;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin-right: 5px;
+}
+
+.button span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+}
+
+.button span:after {
+    content: '\00bb';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+}
+
+.button:hover span {
+    padding-right: 25px;
+}
+
+.button:hover span:after {
+    opacity: 1;
+    right: 0;
+}
+
+.login {
+    display: flex;
+    margin: 14px;
+    position: fixed;
+    right: -10px;
+    top: -15px;
+}
+
+
+.nameitem {
+    text-align: center;
+    background: #005659;
+    box-shadow: 2px 7px 51px -9px rgb(2 87 90);
+    margin: 0px 0px;
+    padding: 11px;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+}
+
+.searchss {
+    margin: 10px -9px;
+}
+
+.con {
+    display: flex;
+    margin: 0% 32%;
+    border-radius: 10px;
+    justify-content: center;
+}
+
+.con_search {
+    display: flex;
+    flex-direction: column;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    background-color: #53A0A0;
+}
+
+.con_search input[type=text] {
+    padding: 10px;
+    margin: 15px;
+    width: 10cm;
+    border-radius: 5px;
+    border: 1px solid #417E77;
+    border-radius: 5px;
+    background: #417E77;
+}
+
+.con_search button:hover {
+    background: #539e95;
+}
+
+.con_search::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+.con_input {
+    display: flex;
+    flex-direction: column;
+    background-color: #004A4D;
+}
+
+.con_input input {
+    padding: 10px;
+    width: 10cm;
+    margin: 15px;
+    border-radius: 5px;
+    border: 1px solid #417E77;
+}
+
+.con_input textarea {
+    padding: 10px;
+    width: 10cm;
+    height: 5cm;
+    margin: 15px;
+    border-radius: 5px;
+    border: 1px solid #417E77;
+}
+
+.con_input button {
+    background-color: #FDD65C;
+    color: rgb(0, 0, 0);
+    padding: 10px;
+    margin: 0px 100px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+
+}
+
+.containerF input[type=text],
+select {
+    width: 100%;
+    padding: 8px 20px;
+    display: inline-block;
+    border: 1px solid #417E77;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.containerF input[type=password] {
+    width: 100%;
+    padding: 8px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #417E77;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.containerF select {
+    width: 30%;
+    padding: 9px 20px;
+    margin: 8px 0;
+    color: #A7D8D5;
+    display: inline-block;
+    background-color: #417E77;
+    border: 1px solid #417E77;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.containerF input[type=email] {
+    width: 100%;
+    padding: 8px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #417E77;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.containerF button {
+    background-color: #FDD65C;
+    color: rgb(0, 0, 0);
+    padding: 8px 80px;
+    margin: 5px 15;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.containerF a {
+    background-color: #FDD65C;
+    color: rgb(0, 0, 0);
+    padding: 9px 20px;
+    font-size: 14px;
+    margin: 5px 0;
+    text-decoration: unset;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.containerF input[type=submit]:hover {
+    background-color: #45a049;
+}
+
+.containerF {
+    display: block;
+    padding: 4px;
+    margin: 0% 35%;
+    border-radius: 10px;
+    justify-content: center;
+    background-color: #004A4D;
+}
+
+.forms input {
+    padding: 10px;
+
+}
+
+.fi_la {
+    display: flex;
+    justify-content: space-between;
+}
+
+.logo a.active {
+    background-color: #53AFA5;
+    color: #A7D8D5;
+}
+
+.bot {
+    display: flex;
+    justify-content: space-evenly;
+    position: relative;
+    top: 18px;
+}
+
+
+@media screen and (max-width: 1100px) {
+    .login {
+        max-width: 350px;
+    }
+    .containerF {
+        margin: 0% 26%;
+    }
+}
+
+.logo a[id=botton] {
+
+    width: 89px;
+    padding: 6px 2px;
+    margin: 11px 4px;
+    text-decoration: none;
+    font-size: 14px;
+
+}
+
+@media screen and (max-width: 930px) {
+
+    .nameitem {
+        font-size: 15px;
+    }
+
+    .logo {
+        justify-content: unset;
+        padding: 0px 5px;
+    }
+
+    .logo img {
+        width: 135px;
+    }
+
+    .column {
+        max-width: 20%;
+    }
+}
+
+@media screen and (max-width: 890px) {
+
+    .nameitem {
+        font-size: 12px;
+    }
+
+    .column {
+        max-width: 25%;
+    }
+    .con_input input {
+        width: 6cm;
+    }
+    .con_input textarea {
+        width: 6cm;
+    }
+    .con_search input[type=text] {
+        width: 8cm;
+    }
+}
+
+
+@media screen and (max-width: 750px) {
+
+    .nameitem {
+        font-size: 10px;
+    }
+}
+
+@media screen and (max-width: 660px) {
+
+    .nameitem {
+        font-size: 10px;
+    }
+
+    .column {
+        max-width: 30%;
+    }
+
+    .con_input input {
+        width: 5cm;
+    }
+    .con_input textarea {
+        width: 5cm;
+    }
+    .con_search input[type=text] {
+        width: 6cm;
+    }
+    .con_input button {
+        margin: 0px 80px 15px;
+    }
+}
+
+@media screen and (max-width: 530px) {
+
+    .logo img {
+        width: 1px;
+        padding: 25px;
+    }
+    .con_input button {
+        margin: 0px 30px 15px;
+    }
+    .con_search input[type=text] {
+        width: 5cm;
+    }
+}

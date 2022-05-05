@@ -1,0 +1,60 @@
+{% load static %}
+
+<head>
+    <script src="https://kit.fontawesome.com/e344495af0.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" href='{% static "css/style.css" %}'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display+SC:wght@700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+
+    <div style="position: fixed; width: 100%;">
+        <div class="logo">
+
+            <img src="{% static 'media\logo.png' %}" width="200px">
+            <div class="login">
+
+                <a href="{% url 'cart' %}" id="botton" class="fa-solid fa-basket-shopping" style="font-size: 28; margin: 6px 3px; background: none;"></a>
+                {% if user.is_authenticated %}
+                <div class="dropdown">
+                    <button class="dropbtn">{{user.username}}</button>
+                    <div class="dropdown-content">
+                        <a href="{% url 'profile' %}">PROFILE</a>
+                        <a href="{% url 'customerlogout' %}">Logout</a>
+                    </div>
+                </div>
+                {% else %}
+                <a id="botton" href="{% url 'customerregistration' %}">Sign up</a>
+                <a id="botton" href="{% url 'customerlogin' %}">Sign in</a>
+                {% endif %}
+            </div>
+        </div>
+        <div class="navbar">
+            <a href="{% url 'home' %}">Home</a>
+            <a class="active" href="#">Promotions</a>
+            <a href="{% url 'type' %}">Type</a>
+            <a href="{% url 'help' %}">Help</a>
+        </div>
+    </div>
+
+
+    <h2 style="padding-top: 150px; text-align: center; font-size: 45px">Promotion</h2>
+    <img class="center" src="{% static 'media\S__5152800.jpg' %}" width="1500px">
+
+    <h2 style="text-align: center;">Product list</h1>
+        <div class="container">
+            <div class="row">
+                {% for i in object_list %}
+                <div class="column">
+                    <a href="{% url 'photo' i.id %}"><img src="{{i.image.url}}" class="image" style="width:100%"></a>
+                    <p class="nameitem">{{i.name}}
+                    </p>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+</body>

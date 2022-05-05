@@ -1,0 +1,331 @@
+{% load static %}
+{% load crispy_forms_tags %}
+
+<style>
+
+
+    body{
+        background: radial-gradient(ellipse at center,#192d38 0,#211f2f 100%);
+    }
+    .con {
+        display: flex;
+        margin: 0% 15%;
+        border-radius: 10px;
+        flex-direction: column;
+        justify-content: flex-start;
+        background-color: #E2E2E2;
+    }
+
+    .con_img {
+        margin: 35px;
+        display: flex;
+        width: 400px;
+        border-radius: 10px;
+        background-color: #F0F0F0;
+    }
+
+    .con_img img {
+        width: 400px;
+    }
+
+    .con_info {
+        display: flex;
+        flex-direction: column;
+        border-radius: 10px;
+        background-color: #E2E2E2;
+    }
+
+    .con_text {
+        display: flex;
+        margin: 10px;
+        padding-left: 15px;
+        padding-right: 15px;
+        border-radius: 10px;
+        background-color: #ffffff;
+    }
+
+    .info {
+        word-wrap: break-word;
+        max-width: 500px;
+        hyphens: auto;
+    }
+
+    .contro {
+        margin: 10px 400px 10px 10px;
+        padding-left: 15px;
+        padding-right: 15px;
+        border-radius: 10px;
+        background-color: #ffffff;
+    }
+
+    .image {
+        position: relative;
+        margin: auto;
+    }
+
+    .name_info {
+        display: flex;
+    }
+
+    .column {
+        /* display: flex; */
+        max-width: 15%;
+    }
+
+    .column img {
+        border-radius: 10px;
+        vertical-align: middle;
+        width: 50%;
+    }
+
+    .column:hover .image {
+        opacity: 0.5;
+    }
+
+
+    .parent_main {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: 1fr;
+        grid-column-gap: 5px;
+        grid-row-gap: 0px;
+    }
+
+    .div1_main {
+        grid-area: 1 / 1 / 2 / 3;
+    }
+
+    .div2_main {
+        grid-area: 1 / 3 / 2 / 4;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        margin: auto;
+    }
+
+    .div2_main a {
+        float: left;
+        display: block;
+        color: #A7D8D5;
+        background: #417E77;
+        text-align: center;
+        padding: 10px 70px;
+        border-radius: 5px;
+        text-decoration: none;
+        font-size: 20px;
+    }
+
+    .parent {
+        background-color: #A7D8D5;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        border-bottom-left-radius: 10px;
+        border-top-left-radius: 10px;
+        grid-template-rows: 1fr;
+        grid-column-gap: 5px;
+        grid-row-gap: 0px;
+        margin-left: 15px;
+        margin-top: 15px;
+        height: 150px;
+    }
+
+    .div1 {
+        grid-area: 1 / 1 / 3 / 2;
+        display: flex;
+        justify-content: center;
+        background-color: aliceblue;
+        margin: 5px;
+        border-radius: 10px;
+    }
+
+    .div2 {
+        grid-area: 1 / 2 / 2 / 3;
+        position: relative;
+        margin: auto;
+        margin-left: 0px;
+    }
+
+    .div3 {
+        grid-area: 1 / 3 / 2 / 4;
+        display: flex;
+        margin: auto;
+    }
+
+    .div3 button {
+        background: none;
+        border: none;
+        color: #417e77;
+        font-size: 20px;
+    }
+
+
+    .div3 button:hover {
+        color: #6ab9b0;
+    }
+
+    .div4 {
+        grid-area: 1 / 4 / 2 / 5;
+        position: relative;
+        margin: auto;
+    }
+
+    .item_scroll {
+        background-color: #6ab9b0;
+        border-bottom-left-radius: 10px;
+        height: 510px;
+        overflow: auto;
+    }
+
+    .con_select {
+        display: flex;
+        margin: 0% 15%;
+        border-radius: 10px;
+        padding-bottom: 20px;
+
+        max-width: 100%;
+
+        justify-content: space-around;
+        margin-top: 140px;
+        margin-bottom: -20px;
+        background-color: #417e77;
+    }
+
+    .con_select a {
+        float: left;
+        display: block;
+        color: #A7D8D5;
+        background: #417E77;
+        text-align: center;
+        padding: 10px;
+        width: 100%;
+        text-decoration: none;
+        font-size: 20px;
+    }
+
+    .con_select a:hover {
+        background: #58a199;
+        color: #000000;
+    }
+
+    .con_select a.active {
+        background: #58a199;
+        color: #000000;
+    }
+
+    .parent_ {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(4, 1fr);
+        grid-column-gap: 0px;
+        grid-row-gap: 0px;
+    }
+</style>
+
+<head>
+    <script src="https://kit.fontawesome.com/e344495af0.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" href='{% static "css/cart.css" %}'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display+SC:wght@700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+
+
+    <div class="con_select">
+        <a class="active">Sipping Cart</a>
+        <a href="{% url 'transaction' %}">purchase history</a>
+    </div>
+
+    </div>
+    <div class="con">
+        {% if price_total != 0 %}
+        <div class="parent_main">
+            <div class="div1_main">
+                <div class="item_scroll">
+                    {% for item, total, quantity in items %}
+                    <div class="parent">
+
+                        <div class="div1"><img src="{{item.image.url}}" class="image" style="height:100%"></div>
+                        <div class="div2">
+                            <h3>{{item.name}}</h2>
+                                <h3 style="margin-top: -25px;">{{item.price}} bath</h3>
+                        </div>
+                        <div class="div3">
+                            <form action="{% url 'removeon' %}" method="post" style="margin: auto;">
+                                {% csrf_token %}
+                                <input type="hidden" name="name" value="{{item.name}}">
+                                <input type="hidden" name="price" value="{{item.price}}">
+                                <button class="fa-solid fa-circle-minus" type="submit"></button>
+                            </form>
+                            <h3 style="padding: 10px">{{quantity}}</h3>
+                            <form action="{% url 'addon' %}" method="post" style="margin: auto;">
+                                {% csrf_token %}
+                                <input type="hidden" name="name" value="{{item.name}}">
+                                <input type="hidden" name="price" value="{{item.price}}">
+                                <button class="fa-solid fa-circle-plus" type="submit"></button>
+                            </form>
+                        </div>
+                        <div class="div4">
+                            <h3>{{total}} bath</h2>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+            <div class="div2_main">
+                <img src="{% url 'qr' mobile=mobile amount=amount %}">
+                <h2>Total {{price_total}}</h2>
+                {% if transac == 0 %}
+                <form method="POST" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    <input type="file" id="myfile" name="myfile"><br><br>
+                    <input type="submit" value="Upload">
+                </form>
+                <a>Please Upload Slip</a>
+                {% else %}
+                <a href="{% url 'ct' %}">Check out</a>
+                {% endif %}
+            </div>
+        </div>
+        {% else %}
+        <h1 style="position: relative; margin: auto; padding: 10%;">Shoping cart is empty</h1>
+        {% endif %}
+    </div>
+
+    <div style="position: fixed; width: 100%; top: 0px;">
+        <div class="logo">
+
+            <img src="{% static 'media\logo.png' %}" width="200px">
+            <div class="login">
+
+                <a id="botton" class="fa-solid fa-basket-shopping"
+                    style="font-size: 28; margin: 6px 3px; background: none;"></a>
+                {% if user.is_authenticated %}
+                <div class="dropdown">
+                    <button class="dropbtn">{{user.username}}</button>
+                    <div class="dropdown-content">
+                        <a href="{% url 'profile' %}">PROFILE</a>
+                        <a href="{% url 'customerlogout' %}">Logout</a>
+                    </div>
+                </div>
+                {% else %}
+                <a id="botton" href="{% url 'customerregistration' %}">Sign up</a>
+                <a id="botton" href="{% url 'customerlogin' %}">Sign in</a>
+                {% endif %}
+            </div>
+        </div>
+        <div class="navbar">
+            <a href="{% url 'home' %}">Home</a>
+            <a href="{% url 'promotions' %}">Promotions</a>
+            <a href="{% url 'type' %}">Type</a>
+            <a href="{% url 'help' %}">Help</a>
+        </div>
+    </div>
+
+</body>
+
+</html>
